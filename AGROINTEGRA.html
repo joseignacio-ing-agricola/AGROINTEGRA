@@ -1,0 +1,1553 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AgroIntegra Consultores | Asesoría Agrícola Profesional – Región de Valparaíso</title>
+<meta name="description" content="Ingeniería agrícola profesional en toda la Región de Valparaíso. Riego tecnificado, nutrición vegetal, frutales y proyectos agrícolas. Consulta desde $9.990.">
+<meta name="keywords" content="asesoría agrícola, ingeniero agrícola, Petorca, La Ligua, Cabildo, riego tecnificado, fertilización, agricultura sostenible">
+<meta name="author" content="José Ignacio Farías López">
+<meta property="og:title" content="AgroIntegra Consultores – Asesoría Agrícola Profesional">
+<meta property="og:description" content="Soluciones agrícolas profesionales para productores y empresas en la Región de Valparaíso.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+/* ── TOKENS ── */
+:root {
+  --soil:   #3B2A1A;   /* tierra profunda – headings */
+  --field:  #2D6A30;   /* verde campo – primario */
+  --stem:   #4A8C3F;   /* verde tallo – secundario */
+  --wheat:  #E8B84B;   /* trigo – acento oro */
+  --sky:    #D7EAD4;   /* cielo verde pálido – fondos suaves */
+  --parch:  #FAF7F2;   /* pergamino – fondo página */
+  --wa:     #25D366;   /* WhatsApp */
+  --dark:   #1C1C1C;
+  --muted:  #6B7280;
+  --border: #E5E0D8;
+  --white:  #FFFFFF;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --shadow-card: 0 2px 20px rgba(45,106,48,.10), 0 1px 4px rgba(0,0,0,.06);
+  --shadow-cta:  0 8px 32px rgba(45,106,48,.28);
+}
+
+*{ margin:0; padding:0; box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+
+body{
+  font-family:'Inter', sans-serif;
+  background: var(--parch);
+  color: var(--dark);
+  overflow-x: hidden;
+  line-height: 1.65;
+}
+
+h1,h2,h3,h4{
+  font-family:'Fraunces', serif;
+  line-height:1.2;
+}
+
+.container{ width: min(1160px, 92%); margin: auto; }
+
+/* ── URGENCY BANNER ── */
+.urgency-bar{
+  background: var(--soil);
+  color: var(--wheat);
+  text-align: center;
+  padding: 10px 16px;
+  font-size: .82rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  position: relative;
+  z-index: 1001;
+}
+.urgency-bar span{ color: #fff; }
+
+/* ── HEADER ── */
+header{
+  position: sticky;
+  top: 0;
+  background: rgba(250,247,242,.97);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+  z-index: 1000;
+}
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+}
+.logo{
+  font-family: 'Fraunces', serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--field);
+  letter-spacing: -.01em;
+}
+.logo span{ color: var(--wheat); }
+.menu{
+  display: flex;
+  gap: 28px;
+  align-items: center;
+}
+.menu a{
+  text-decoration: none;
+  font-size: .9rem;
+  font-weight: 500;
+  color: var(--dark);
+  transition: color .2s;
+}
+.menu a:hover{ color: var(--field); }
+
+.btn-nav{
+  background: var(--wa);
+  color: #fff !important;
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-weight: 600 !important;
+  font-size: .88rem !important;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  transition: transform .2s, box-shadow .2s;
+}
+.btn-nav:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(37,211,102,.35);
+}
+
+/* ── HERO ── */
+.hero{
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: linear-gradient(160deg, #14371A 0%, #1E4D24 55%, #2D6A30 100%);
+}
+/* Textura de campo sutil */
+.hero::before{
+  content:'';
+  position: absolute;
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=1600') center/cover no-repeat;
+  opacity: .18;
+  pointer-events: none;
+}
+/* Degradado inferior que conecta con la sección siguiente */
+.hero::after{
+  content:'';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 120px;
+  background: linear-gradient(transparent, var(--parch));
+  pointer-events: none;
+}
+
+.hero-inner{
+  position: relative;
+  z-index: 2;
+  padding: 110px 0 160px;
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 60px;
+  align-items: center;
+}
+
+/* Eyebrow */
+.eyebrow{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 999px;
+  padding: 7px 16px;
+  font-size: .8rem;
+  font-weight: 600;
+  color: var(--wheat);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+.eyebrow-dot{
+  width:7px; height:7px;
+  background: var(--wa);
+  border-radius: 50%;
+  animation: blink 1.5s infinite;
+}
+@keyframes blink{ 0%,100%{opacity:1} 50%{opacity:.3} }
+
+.hero h1{
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 22px;
+}
+.hero h1 em{
+  font-style: italic;
+  color: var(--wheat);
+}
+.hero-sub{
+  font-size: 1.1rem;
+  color: rgba(255,255,255,.82);
+  max-width: 560px;
+  margin-bottom: 36px;
+}
+
+/* Microcopy de confianza bajo los CTA */
+.trust-line{
+  display: flex;
+  gap: 20px;
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+.trust-item{
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: .8rem;
+  color: rgba(255,255,255,.7);
+}
+.trust-item i{ color: var(--wheat); font-size: .9rem; }
+
+/* Hero CTA group */
+.cta-group{ display:flex; gap:12px; flex-wrap:wrap; }
+
+.btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 15px 26px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: .95rem;
+  transition: transform .2s, box-shadow .2s;
+}
+.btn:hover{ transform: translateY(-3px); }
+
+.btn-wa-primary{
+  background: var(--wa);
+  color: #fff;
+  box-shadow: 0 6px 22px rgba(37,211,102,.4);
+}
+.btn-wa-primary:hover{ box-shadow: 0 10px 30px rgba(37,211,102,.5); }
+
+.btn-outline{
+  background: rgba(255,255,255,.1);
+  border: 1.5px solid rgba(255,255,255,.4);
+  color: #fff;
+}
+.btn-outline:hover{ background: rgba(255,255,255,.18); }
+
+/* Hero card – prueba social / propuesta de valor rápida */
+.hero-card{
+  background: rgba(255,255,255,.1);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: var(--radius-lg);
+  padding: 32px 28px;
+  color: #fff;
+}
+.hero-card-title{
+  font-family: 'Fraunces', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--wheat);
+  margin-bottom: 22px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-size: .78rem;
+}
+.metric-row{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+.metric{
+  background: rgba(255,255,255,.08);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  text-align: center;
+}
+.metric-num{
+  font-family:'Fraunces',serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--wheat);
+  display: block;
+}
+.metric-label{
+  font-size: .75rem;
+  color: rgba(255,255,255,.7);
+  margin-top: 2px;
+  display: block;
+}
+.guarantee-box{
+  background: rgba(37,211,102,.15);
+  border: 1px solid rgba(37,211,102,.3);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  font-size: .85rem;
+  color: rgba(255,255,255,.9);
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+.guarantee-box i{ color: var(--wa); margin-top: 2px; flex-shrink: 0; }
+
+/* ── SOCIAL PROOF STRIP ── */
+.proof-strip{
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  padding: 26px 0;
+}
+.proof-inner{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+.proof-item{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: .88rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+.proof-item i{ color: var(--field); font-size: 1.1rem; }
+.proof-divider{
+  width: 1px;
+  height: 28px;
+  background: var(--border);
+}
+
+/* ── SECTIONS ── */
+section{ padding: 90px 0; }
+
+.section-kicker{
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--field);
+  margin-bottom: 10px;
+}
+.section-title{
+  font-family:'Fraunces',serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 700;
+  color: var(--soil);
+  margin-bottom: 14px;
+}
+.section-sub{
+  color: var(--muted);
+  max-width: 620px;
+  font-size: 1rem;
+  margin-bottom: 50px;
+}
+.text-center{ text-align: center; }
+.text-center .section-sub{ margin-left: auto; margin-right: auto; }
+
+/* ── CARDS ── */
+.grid-3{ display:grid; grid-template-columns: repeat(auto-fit,minmax(290px,1fr)); gap:24px; }
+.grid-2{ display:grid; grid-template-columns: repeat(auto-fit,minmax(320px,1fr)); gap:24px; }
+
+.card{
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 28px;
+  box-shadow: var(--shadow-card);
+  transition: transform .25s, box-shadow .25s;
+}
+.card:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 12px 36px rgba(45,106,48,.14);
+}
+.card-icon{
+  width: 48px; height: 48px;
+  background: var(--sky);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  color: var(--field);
+  margin-bottom: 16px;
+}
+.card h3{
+  font-size: 1.05rem;
+  color: var(--soil);
+  margin-bottom: 8px;
+}
+.card p{ font-size: .9rem; color: var(--muted); }
+
+/* ── PRICING / OFERTAS ── */
+.pricing-section{ background: var(--sky); }
+
+.pricing-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px,1fr));
+  gap: 22px;
+}
+
+.price-card{
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 30px;
+  position: relative;
+  transition: transform .25s, box-shadow .25s;
+  display: flex;
+  flex-direction: column;
+}
+.price-card:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 14px 38px rgba(45,106,48,.15);
+}
+.price-card.featured{
+  border-color: var(--field);
+  border-width: 2px;
+}
+
+.popular-badge{
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--field);
+  color: #fff;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: 5px 16px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.offer-tag{
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: #FEE2E2;
+  color: #B91C1C;
+  font-size: .7rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  letter-spacing: .04em;
+}
+
+.price-name{
+  font-family:'Fraunces',serif;
+  font-size: 1.1rem;
+  color: var(--soil);
+  margin-bottom: 6px;
+}
+.price-desc{
+  font-size: .84rem;
+  color: var(--muted);
+  margin-bottom: 18px;
+  min-height: 38px;
+}
+.price-anchor{
+  font-size: .85rem;
+  color: var(--muted);
+  text-decoration: line-through;
+  margin-bottom: 2px;
+}
+.price-main{
+  font-family:'Fraunces',serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--field);
+  margin-bottom: 18px;
+}
+.price-main span{ font-size: 1rem; font-weight: 400; color: var(--muted); }
+
+.price-features{
+  list-style: none;
+  margin-bottom: 26px;
+  flex:1;
+}
+.price-features li{
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  font-size: .88rem;
+  color: var(--dark);
+  padding: 5px 0;
+  border-bottom: 1px solid var(--border);
+}
+.price-features li:last-child{ border-bottom: none; }
+.price-features li i{ color: var(--field); margin-top: 2px; font-size: .9rem; flex-shrink:0; }
+
+.btn-price{
+  display: block;
+  text-align: center;
+  padding: 14px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: .9rem;
+  text-decoration: none;
+  transition: transform .2s, box-shadow .2s;
+}
+.btn-price-wa{
+  background: var(--wa);
+  color: #fff;
+}
+.btn-price-wa:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37,211,102,.38);
+}
+.btn-price-outline{
+  border: 1.5px solid var(--field);
+  color: var(--field);
+  background: transparent;
+}
+.btn-price-outline:hover{
+  background: var(--sky);
+}
+
+/* Savings highlight */
+.savings-pill{
+  display: inline-block;
+  background: #DCFCE7;
+  color: #166534;
+  font-size: .7rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+}
+
+/* ── PROCESO (How it works) ── */
+.process-section{ background: var(--white); }
+
+.steps{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(210px,1fr));
+  gap: 0;
+  position: relative;
+}
+.steps::before{
+  content:'';
+  position: absolute;
+  top: 30px;
+  left: 12%;
+  right: 12%;
+  height: 2px;
+  background: var(--border);
+  z-index: 0;
+}
+.step{
+  text-align: center;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+.step-num{
+  width: 60px; height: 60px;
+  border-radius: 50%;
+  background: var(--field);
+  color: #fff;
+  font-family:'Fraunces',serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 18px;
+  box-shadow: 0 4px 16px rgba(45,106,48,.3);
+}
+.step h4{
+  font-size: 1rem;
+  color: var(--soil);
+  margin-bottom: 6px;
+}
+.step p{
+  font-size: .85rem;
+  color: var(--muted);
+}
+
+/* ── TESTIMONIALS ── */
+.testimonials-section{ background: var(--parch); }
+
+.testimonial-card{
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 28px;
+  box-shadow: var(--shadow-card);
+}
+.stars{ color: var(--wheat); font-size: 1rem; margin-bottom: 12px; }
+.testimonial-text{
+  font-size: .95rem;
+  color: var(--dark);
+  line-height: 1.7;
+  margin-bottom: 18px;
+  font-style: italic;
+}
+.testimonial-author{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.author-avatar{
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  background: var(--sky);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family:'Fraunces',serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--field);
+  flex-shrink: 0;
+}
+.author-name{
+  font-size: .88rem;
+  font-weight: 600;
+  color: var(--soil);
+}
+.author-role{
+  font-size: .78rem;
+  color: var(--muted);
+}
+
+/* ── PROBLEMAS / DOLORES (Empatía) ── */
+.pain-section{ background: var(--white); }
+.pain-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+  gap: 20px;
+}
+.pain-card{
+  background: #FFF7ED;
+  border: 1px solid #FED7AA;
+  border-left: 4px solid #F97316;
+  border-radius: var(--radius-sm);
+  padding: 20px;
+}
+.pain-card h4{
+  font-size: .95rem;
+  color: #7C2D12;
+  margin-bottom: 6px;
+}
+.pain-card p{
+  font-size: .85rem;
+  color: #9A3412;
+}
+
+.solution-arrow{
+  text-align: center;
+  padding: 30px 0;
+}
+.solution-arrow i{ font-size: 2rem; color: var(--field); animation: bounce .9s infinite alternate; }
+@keyframes bounce{ from{transform:translateY(0)} to{transform:translateY(6px)} }
+
+/* ── SERVICIOS ── */
+
+/* ── FAQ ── */
+.faq-section{ background: var(--white); }
+.faq-item{
+  border-bottom: 1px solid var(--border);
+}
+.faq-item summary{
+  padding: 18px 0;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--soil);
+  font-size: .95rem;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.faq-item summary::after{
+  content:'+';
+  font-size: 1.4rem;
+  color: var(--field);
+  transition: transform .2s;
+}
+.faq-item[open] summary::after{ transform: rotate(45deg); }
+.faq-item p{
+  padding: 0 0 18px;
+  color: var(--muted);
+  font-size: .92rem;
+}
+
+/* ── COBERTURA ── */
+.coverage-section{ background: var(--sky); }
+.coverage-tags{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  max-width: 900px;
+  margin: auto;
+}
+.coverage-tag{
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 7px 16px;
+  font-size: .82rem;
+  color: var(--soil);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.coverage-tag i{ color: var(--field); font-size: .8rem; }
+
+/* ── CONTACTO ── */
+.contact-section{ background: var(--parch); }
+.contact-card{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contact-card .card-icon{
+  width: 60px; height: 60px;
+  font-size: 1.5rem;
+  margin-bottom: 14px;
+}
+
+/* ── MAPA ── */
+.map-frame{
+  width: 100%;
+  height: 380px;
+  border: none;
+  border-radius: var(--radius-md);
+  display: block;
+}
+
+/* ── CTA FINAL ── */
+.final-cta{
+  background: linear-gradient(135deg, var(--soil) 0%, var(--field) 100%);
+  text-align: center;
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+}
+.final-cta::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background: url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=1600') center/cover no-repeat;
+  opacity:.08;
+}
+.final-cta > .container{ position:relative; z-index:1; }
+.final-cta h2{
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  color: #fff;
+  margin-bottom: 18px;
+}
+.final-cta p{
+  font-size: 1.1rem;
+  color: rgba(255,255,255,.8);
+  max-width: 620px;
+  margin: 0 auto 36px;
+}
+.final-cta-meta{
+  font-size: .82rem;
+  color: rgba(255,255,255,.55);
+  margin-top: 16px;
+}
+
+/* ── FOOTER ── */
+footer{
+  background: var(--soil);
+  color: rgba(255,255,255,.75);
+  padding: 60px 0 30px;
+}
+.footer-grid{
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+.footer-brand h3{
+  font-family:'Fraunces',serif;
+  color: #fff;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+.footer-brand p{
+  font-size: .88rem;
+  line-height: 1.7;
+  max-width: 260px;
+}
+footer h4{
+  font-size: .85rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--wheat);
+  margin-bottom: 14px;
+  font-weight: 600;
+}
+footer a{
+  display: block;
+  font-size: .88rem;
+  color: rgba(255,255,255,.65);
+  text-decoration: none;
+  margin-bottom: 8px;
+  transition: color .2s;
+}
+footer a:hover{ color: #fff; }
+.footer-bottom{
+  border-top: 1px solid rgba(255,255,255,.1);
+  padding-top: 24px;
+  text-align: center;
+  font-size: .8rem;
+  color: rgba(255,255,255,.4);
+}
+
+/* ── WHATSAPP FLOTANTE ── */
+.wa-float{
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+.wa-bubble{
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  font-size: .82rem;
+  color: var(--dark);
+  max-width: 180px;
+  line-height: 1.4;
+  box-shadow: var(--shadow-card);
+  position: relative;
+}
+.wa-bubble::after{
+  content:'';
+  position: absolute;
+  bottom: -8px;
+  right: 22px;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid var(--white);
+}
+.wa-btn{
+  width: 62px; height: 62px;
+  background: var(--wa);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.9rem;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(37,211,102,.45);
+  animation: wa-pulse 2.5s infinite;
+}
+@keyframes wa-pulse{
+  0%,100%{ box-shadow: 0 6px 20px rgba(37,211,102,.45), 0 0 0 0 rgba(37,211,102,.4); }
+  50%{ box-shadow: 0 6px 20px rgba(37,211,102,.45), 0 0 0 12px rgba(37,211,102,0); }
+}
+.wa-badge{
+  position: absolute;
+  top: -4px; right: -4px;
+  background: #EF4444;
+  color: #fff;
+  font-size: .65rem;
+  font-weight: 700;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--parch);
+}
+
+/* ── ANIMATIONS ── */
+.reveal{
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+.reveal.visible{
+  opacity: 1;
+  transform: none;
+}
+.reveal-delay-1{ transition-delay: .1s; }
+.reveal-delay-2{ transition-delay: .2s; }
+.reveal-delay-3{ transition-delay: .3s; }
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .hero-inner{ grid-template-columns: 1fr; }
+  .hero-card{ display: none; }
+  .steps::before{ display: none; }
+  .footer-grid{ grid-template-columns: 1fr; }
+}
+@media(max-width:640px){
+  .menu a:not(.btn-nav){ display: none; }
+  .hero h1{ font-size: 2.2rem; }
+  .proof-divider{ display: none; }
+  .proof-inner{ gap: 22px; }
+}
+</style>
+</head>
+<body>
+
+<!-- URGENCY BANNER (Escasez + FOMO) -->
+<div class="urgency-bar">
+  🌾 Programa Agricultura Familiar: <span>precios especiales disponibles hasta agotar cupos.</span> Consulta sin compromiso →
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="container">
+    <nav>
+      <div class="logo">Agro<span>Integra</span> Consultores</div>
+      <div class="menu">
+        <a href="#servicios">Servicios</a>
+        <a href="#precios">Precios</a>
+        <a href="#proceso">Cómo funciona</a>
+        <a href="#contacto">Contacto</a>
+        <a href="https://wa.me/56971505118?text=Hola,%20necesito%20una%20asesoría%20agrícola" target="_blank" class="btn-nav">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO (AIDA: Atención) -->
+<section class="hero" id="inicio">
+  <div class="container">
+    <div class="hero-inner">
+
+      <div class="hero-left">
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          Ingeniero Agrícola · Región de Valparaíso
+        </div>
+
+        <h1>
+          Su campo merece<br>
+          <em>asesoría experta,</em><br>
+          no suposiciones.
+        </h1>
+
+        <p class="hero-sub">
+          Diagnóstico técnico, riego tecnificado, nutrición y fitosanidad
+          para productores y empresas agrícolas. Atención presencial y online
+          en toda la Región de Valparaíso.
+        </p>
+
+        <div class="cta-group">
+          <a href="https://wa.me/56971505118?text=Hola,%20necesito%20una%20asesoría%20agrícola" target="_blank" class="btn btn-wa-primary">
+            <i class="fab fa-whatsapp"></i> Solicitar asesoría gratuita
+          </a>
+          <a href="tel:+56971505118" class="btn btn-outline">
+            <i class="fas fa-phone"></i> Llamar ahora
+          </a>
+        </div>
+
+        <div class="trust-line">
+          <div class="trust-item"><i class="fas fa-check-circle"></i> Respuesta en menos de 2 horas</div>
+          <div class="trust-item"><i class="fas fa-check-circle"></i> Primera consulta sin costo</div>
+          <div class="trust-item"><i class="fas fa-check-circle"></i> 38 comunas de cobertura</div>
+        </div>
+      </div>
+
+      <!-- Hero card – Credenciales rápidas -->
+      <div class="hero-card">
+        <div class="hero-card-title">Por qué elegir AgroIntegra</div>
+        <div class="metric-row">
+          <div class="metric">
+            <span class="metric-num">100%</span>
+            <span class="metric-label">Atención personalizada</span>
+          </div>
+          <div class="metric">
+            <span class="metric-num">38</span>
+            <span class="metric-label">Comunas cubiertas</span>
+          </div>
+          <div class="metric">
+            <span class="metric-num">24/7</span>
+            <span class="metric-label">Soporte WhatsApp</span>
+          </div>
+          <div class="metric">
+            <span class="metric-num">$9.990</span>
+            <span class="metric-label">Consulta desde</span>
+          </div>
+        </div>
+        <div class="guarantee-box">
+          <i class="fas fa-shield-alt"></i>
+          <div>Si su consulta no tiene respuesta técnica útil, <strong>no le cobramos.</strong></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF STRIP (Prueba social) -->
+<div class="proof-strip">
+  <div class="container">
+    <div class="proof-inner">
+      <div class="proof-item"><i class="fas fa-star"></i> Calificación 5/5 en Google</div>
+      <div class="proof-divider"></div>
+      <div class="proof-item"><i class="fas fa-map-marker-alt"></i> Petorca · La Ligua · Cabildo · Quillota</div>
+      <div class="proof-divider"></div>
+      <div class="proof-item"><i class="fas fa-leaf"></i> AFC · Empresas · Parceleros</div>
+      <div class="proof-divider"></div>
+      <div class="proof-item"><i class="fas fa-graduation-cap"></i> Ingeniero Agrícola titulado</div>
+    </div>
+  </div>
+</div>
+
+<!-- EMPATÍA / DOLORES (AIDA: Interés) -->
+<section class="pain-section" id="problemas">
+  <div class="container">
+    <div class="section-kicker text-center">¿Le resulta familiar?</div>
+    <h2 class="section-title text-center">Los problemas que frenan<br>la rentabilidad de su predio</h2>
+    <p class="section-sub text-center">Antes de hablar de soluciones, entendemos su realidad.</p>
+
+    <div class="pain-grid reveal">
+      <div class="pain-card">
+        <h4>💧 Pérdida de agua en el riego</h4>
+        <p>Gasta más agua de la necesaria sin saber dónde está la falla en su sistema.</p>
+      </div>
+      <div class="pain-card">
+        <h4>🌿 Plantas débiles sin saber por qué</h4>
+        <p>Aplica fertilizantes pero el cultivo no responde como debería.</p>
+      </div>
+      <div class="pain-card">
+        <h4>🦟 Plagas que vuelven cada temporada</h4>
+        <p>Gasta en agroquímicos sin un programa técnico que realmente funcione.</p>
+      </div>
+      <div class="pain-card">
+        <h4>📄 Proyectos rechazados por falta de técnica</h4>
+        <p>Necesita formulación profesional para acceder a fondos o financiamiento.</p>
+      </div>
+    </div>
+
+    <div class="solution-arrow">
+      <i class="fas fa-chevron-down"></i>
+    </div>
+
+    <div style="text-align:center; margin-top: 10px;">
+      <div class="section-kicker">La solución</div>
+      <h2 class="section-title">Asesoría técnica con diagnóstico real,<br>no recetas genéricas.</h2>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS (AIDA: Deseo) -->
+<section id="servicios" style="background: var(--parch);">
+  <div class="container">
+    <div class="section-kicker text-center">Especialidades</div>
+    <h2 class="section-title text-center">Lo que hace AgroIntegra<br>por su campo</h2>
+    <p class="section-sub text-center">Cada servicio responde a una necesidad concreta de productores y empresas agrícolas.</p>
+
+    <div class="grid-3">
+      <div class="card reveal">
+        <div class="card-icon"><i class="fas fa-tint"></i></div>
+        <h3>Riego Tecnificado</h3>
+        <p>Diseño, evaluación y optimización de sistemas de riego para ahorrar agua y mejorar el rendimiento del cultivo.</p>
+      </div>
+      <div class="card reveal reveal-delay-1">
+        <div class="card-icon"><i class="fas fa-seedling"></i></div>
+        <h3>Nutrición Vegetal</h3>
+        <p>Programas de fertilización basados en análisis de suelo y requerimientos reales de cada especie.</p>
+      </div>
+      <div class="card reveal reveal-delay-2">
+        <div class="card-icon"><i class="fas fa-tree"></i></div>
+        <h3>Manejo de Frutales</h3>
+        <p>Asesoría técnica para huertos frutales orientada a mejorar productividad y calidad de fruta comercial.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon"><i class="fas fa-bug"></i></div>
+        <h3>Fitosanidad</h3>
+        <p>Manejo integrado de plagas y enfermedades con enfoque en reducir costos y dependencia de agroquímicos.</p>
+      </div>
+      <div class="card reveal reveal-delay-1">
+        <div class="card-icon"><i class="fas fa-leaf"></i></div>
+        <h3>Agricultura Regenerativa</h3>
+        <p>Estrategias para recuperar la fertilidad del suelo y construir sistemas productivos sostenibles a largo plazo.</p>
+      </div>
+      <div class="card reveal reveal-delay-2">
+        <div class="card-icon"><i class="fas fa-file-signature"></i></div>
+        <h3>Proyectos Agrícolas</h3>
+        <p>Formulación y evaluación de proyectos para fondos concursables, financiamiento e inversión productiva.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CÓMO FUNCIONA (Proceso) -->
+<section class="process-section" id="proceso">
+  <div class="container">
+    <div class="section-kicker text-center">Sin complicaciones</div>
+    <h2 class="section-title text-center">Cómo empezamos a trabajar<br>con usted</h2>
+    <p class="section-sub text-center" style="margin-bottom: 60px;">Cuatro pasos simples para que su campo empiece a mejorar.</p>
+
+    <div class="steps reveal">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h4>Contáctenos</h4>
+        <p>Por WhatsApp, llamada o correo. Le respondemos en menos de 2 horas.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h4>Diagnóstico inicial</h4>
+        <p>Conversamos sobre su situación y definimos qué tipo de asesoría necesita.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h4>Visita o consulta</h4>
+        <p>Presencial en su predio o por videollamada, según lo que requiera.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h4>Plan de acción</h4>
+        <p>Recomendaciones concretas que puede aplicar de inmediato.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRECIOS – AFC (Anclaje + Urgencia) -->
+<section class="pricing-section" id="precios">
+  <div class="container">
+    <div class="section-kicker text-center">Programa Especial AFC</div>
+    <h2 class="section-title text-center">Precios especiales para<br>Agricultura Familiar Campesina</h2>
+    <p class="section-sub text-center">Para predios menores a 5 hectáreas. Acceso profesional sin barreras de costo.</p>
+
+    <div class="pricing-grid">
+
+      <!-- Plan 1 -->
+      <div class="price-card reveal">
+        <div class="offer-tag">50% OFF</div>
+        <div class="price-name">Consulta Online Campesina</div>
+        <p class="price-desc">Ideal para diagnósticos iniciales y dudas técnicas urgentes.</p>
+        <div class="price-anchor">$19.990</div>
+        <div class="savings-pill">Ahorra $10.000</div>
+        <div class="price-main">$9.990 <span>/ consulta</span></div>
+        <ul class="price-features">
+          <li><i class="fas fa-check"></i> Diagnóstico inicial</li>
+          <li><i class="fas fa-check"></i> Videollamada o WhatsApp</li>
+          <li><i class="fas fa-check"></i> Revisión de fotografías</li>
+          <li><i class="fas fa-check"></i> Recomendaciones técnicas escritas</li>
+        </ul>
+        <a href="https://wa.me/56971505118?text=Hola,%20me%20interesa%20la%20Consulta%20Online%20Campesina" target="_blank" class="btn-price btn-price-wa">
+          <i class="fab fa-whatsapp"></i> Solicitar oferta
+        </a>
+      </div>
+
+      <!-- Plan 2 – Featured -->
+      <div class="price-card featured reveal reveal-delay-1">
+        <div class="popular-badge">⭐ Más solicitado</div>
+        <div class="offer-tag">40% OFF</div>
+        <div class="price-name">Diagnóstico Técnico Rural</div>
+        <p class="price-desc">Visita al predio con evaluación completa y orientación personalizada.</p>
+        <div class="price-anchor">$49.990</div>
+        <div class="savings-pill">Ahorra $20.000</div>
+        <div class="price-main">$29.990 <span>/ visita</span></div>
+        <ul class="price-features">
+          <li><i class="fas fa-check"></i> Visita técnica a terreno</li>
+          <li><i class="fas fa-check"></i> Evaluación general del predio</li>
+          <li><i class="fas fa-check"></i> Diagnóstico de riego</li>
+          <li><i class="fas fa-check"></i> Orientación escrita personalizada</li>
+        </ul>
+        <a href="https://wa.me/56971505118?text=Hola,%20me%20interesa%20el%20Diagnóstico%20Técnico%20Rural" target="_blank" class="btn-price btn-price-wa">
+          <i class="fab fa-whatsapp"></i> Solicitar oferta
+        </a>
+      </div>
+
+      <!-- Plan 3 -->
+      <div class="price-card reveal reveal-delay-2">
+        <div class="offer-tag">45% OFF</div>
+        <div class="price-name">Plan Campesino Mensual</div>
+        <p class="price-desc">Acompañamiento continuo para quienes buscan mejorar temporada a temporada.</p>
+        <div class="price-anchor">$179.990</div>
+        <div class="savings-pill">Ahorra $80.000</div>
+        <div class="price-main">$99.990 <span>/ mes</span></div>
+        <ul class="price-features">
+          <li><i class="fas fa-check"></i> 1 visita mensual a terreno</li>
+          <li><i class="fas fa-check"></i> Soporte ilimitado por WhatsApp</li>
+          <li><i class="fas fa-check"></i> Seguimiento técnico continuo</li>
+          <li><i class="fas fa-check"></i> Asesoría permanente en temporada</li>
+        </ul>
+        <a href="https://wa.me/56971505118?text=Hola,%20me%20interesa%20el%20Plan%20Campesino" target="_blank" class="btn-price btn-price-wa">
+          <i class="fab fa-whatsapp"></i> Solicitar oferta
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TARIFAS PROFESIONALES -->
+<section id="tarifas" style="background: var(--parch);">
+  <div class="container">
+    <div class="section-kicker text-center">Tarifas generales</div>
+    <h2 class="section-title text-center">Para productores,<br>empresas e instituciones</h2>
+    <p class="section-sub text-center">Sin programa especial. Precios transparentes para todo tipo de cliente.</p>
+
+    <div class="pricing-grid">
+
+      <div class="price-card reveal">
+        <div class="price-name">Consulta Online</div>
+        <p class="price-desc">45 minutos de diagnóstico técnico por videollamada.</p>
+        <div class="price-main">$19.990 <span>/ sesión</span></div>
+        <ul class="price-features">
+          <li><i class="fas fa-check"></i> 45 minutos</li>
+          <li><i class="fas fa-check"></i> Videollamada</li>
+          <li><i class="fas fa-check"></i> Diagnóstico técnico</li>
+          <li><i class="fas fa-check"></i> Recomendaciones prácticas</li>
+        </ul>
+        <a href="https://wa.me/56971505118?text=Hola,%20me%20interesa%20la%20Consulta%20Online" target="_blank" class="btn-price btn-price-outline">Consultar</a>
+      </div>
+
+      <div class="price-card reveal reveal-delay-1">
+        <div class="price-name">Consulta Técnica Avanzada</div>
+        <p class="price-desc">Análisis detallado con informe en PDF.</p>
+        <div class="price-main">$39.990 <span>/ sesión</span></div>
+        <ul class="price-features">
+          <li><i class="fas fa-check"></i> 90 minutos</li>
+          <li><i class="fas fa-check"></i> Análisis detallado</li>
+          <li><i class="fas fa-check"></i> Revisión de documentos</li>
+          <li><i class="fas fa-check"></i> Informe resumido en PDF</li>
+        </ul>
+        <a href="https://wa.me/56971505118?text=Hola,%20me%20interesa%20la%20Consulta%20Avanzada" target="_blank" class="btn-price btn-price-outline">Consultar</a>
+      </div>
+
+      <div class="price-card reveal reveal-delay-2">
+        <div class="price-name">Visita Técnica</div>
+        <p class="price-desc">Hasta 2 horas de diagnóstico general en terreno.</p>
+        <div class="price-main">$49.990 <span>/ visita</span></div>
+        <ul class="price-features">
+          <li><i class="fas fa-check"></i> Hasta 2 horas</li>
+          <li><i class="fas fa-check"></i> Diagnóstico general</li>
+          <li><i class="fas fa-check"></i> Evaluación productiva</li>
+          <li><i class="fas fa-check"></i> Recomendaciones técnicas</li>
+        </ul>
+        <a href="https://wa.me/56971505118?text=Hola,%20me%20interesa%20una%20Visita%20Técnica" target="_blank" class="btn-price btn-price-outline">Consultar</a>
+      </div>
+
+      <div class="price-card reveal">
+        <div class="price-name">Asesoría Integral</div>
+        <p class="price-desc">Hasta 4 horas cubriendo riego, nutrición y fitosanidad.</p>
+        <div class="price-main">$89.990 <span>/ jornada</span></div>
+        <ul class="price-features">
+          <li><i class="fas fa-check"></i> Hasta 4 horas</li>
+          <li><i class="fas fa-check"></i> Riego tecnificado</li>
+          <li><i class="fas fa-check"></i> Nutrición vegetal</li>
+          <li><i class="fas fa-check"></i> Fitosanidad</li>
+        </ul>
+        <a href="https://wa.me/56971505118?text=Hola,%20me%20interesa%20la%20Asesoría%20Integral" target="_blank" class="btn-price btn-price-outline">Consultar</a>
+      </div>
+
+      <div class="price-card reveal reveal-delay-1">
+        <div class="price-name">Jornada Completa</div>
+        <p class="price-desc">8 horas con capacitación, diagnóstico y plan de acción.</p>
+        <div class="price-main">$149.990 <span>/ día</span></div>
+        <ul class="price-features">
+          <li><i class="fas fa-check"></i> 8 horas</li>
+          <li><i class="fas fa-check"></i> Capacitación al equipo</li>
+          <li><i class="fas fa-check"></i> Diagnóstico integral</li>
+          <li><i class="fas fa-check"></i> Plan de acción detallado</li>
+        </ul>
+        <a href="https://wa.me/56971505118?text=Hola,%20me%20interesa%20la%20Jornada%20Completa" target="_blank" class="btn-price btn-price-outline">Consultar</a>
+      </div>
+
+      <div class="price-card reveal reveal-delay-2">
+        <div class="price-name">Plan Productor Mensual</div>
+        <p class="price-desc">Acompañamiento continuo para productores de mayor escala.</p>
+        <div class="price-main">$179.990 <span>/ mes</span></div>
+        <ul class="price-features">
+          <li><i class="fas fa-check"></i> 1 visita mensual</li>
+          <li><i class="fas fa-check"></i> Soporte WhatsApp</li>
+          <li><i class="fas fa-check"></i> Seguimiento técnico</li>
+          <li><i class="fas fa-check"></i> Acompañamiento continuo</li>
+        </ul>
+        <a href="https://wa.me/56971505118?text=Hola,%20me%20interesa%20el%20Plan%20Productor%20Mensual" target="_blank" class="btn-price btn-price-outline">Consultar</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALES (Prueba Social) -->
+<section class="testimonials-section" id="testimonios">
+  <div class="container">
+    <div class="section-kicker text-center">Testimonios</div>
+    <h2 class="section-title text-center">Lo que dicen quienes<br>ya trabajan con nosotros</h2>
+    <p class="section-sub text-center" style="margin-bottom: 44px;">Resultados reales de productores de la Región de Valparaíso.</p>
+
+    <div class="grid-3">
+      <div class="testimonial-card reveal">
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="testimonial-text">"Gracias a la asesoría de riego logramos reducir significativamente el consumo de agua en nuestro huerto. Los resultados fueron visibles en la primera temporada."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">MR</div>
+          <div>
+            <div class="author-name">Manuel Rojas</div>
+            <div class="author-role">Productor de paltos · Petorca</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card reveal reveal-delay-1">
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="testimonial-text">"Me ayudaron a formular el proyecto que necesitaba para el INDAP y fue aprobado. Sin la asesoría técnica no habría sabido cómo presentarlo correctamente."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">LC</div>
+          <div>
+            <div class="author-name">Lorena Contreras</div>
+            <div class="author-role">Agricultora familiar · Cabildo</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card reveal reveal-delay-2">
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="testimonial-text">"El diagnóstico de suelo y el programa de fertilización que nos diseñaron cambiaron completamente la productividad de nuestros viñedos esta temporada."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">PV</div>
+          <div>
+            <div class="author-name">Pedro Vallejos</div>
+            <div class="author-role">Viticultor · San Felipe</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="container" style="max-width: 750px;">
+    <div class="section-kicker text-center">Preguntas frecuentes</div>
+    <h2 class="section-title text-center">Todo lo que necesita<br>saber antes de contactar</h2>
+
+    <div style="margin-top: 40px;">
+      <details class="faq-item">
+        <summary>¿Realiza visitas técnicas a terreno?</summary>
+        <p>Sí. Atendemos productores y empresas en toda la Región de Valparaíso, con énfasis en las provincias de Petorca, Quillota, Los Andes, San Felipe y San Antonio.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Trabaja con pequeños agricultores?</summary>
+        <p>Sí, y es una prioridad. Contamos con el Programa Especial AFC para productores con predios menores a 5 hectáreas, con precios reducidos de hasta 50% para hacer el acceso técnico más justo.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Puede ayudar con sistemas de riego?</summary>
+        <p>Sí. Realizamos evaluación, diseño y optimización de sistemas de riego tecnificado, tanto por goteo, microaspersión como aspersión.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Formula proyectos agrícolas para INDAP u otras instituciones?</summary>
+        <p>Sí. Apoyamos la formulación y evaluación de proyectos agrícolas y productivos para fondos concursables y financiamiento institucional.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Cómo se agenda una consulta?</summary>
+        <p>A través de WhatsApp al +56 9 7150 5118, por llamada telefónica o por correo electrónico. Le respondemos en menos de 2 horas en días hábiles.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Ofrece consultas online además de visitas?</summary>
+        <p>Sí. Todas las consultas de diagnóstico inicial se pueden hacer por videollamada o WhatsApp, lo que permite orientación inmediata sin necesidad de esperar una visita a terreno.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- COBERTURA -->
+<section class="coverage-section" id="cobertura">
+  <div class="container">
+    <div class="section-kicker text-center">Cobertura regional</div>
+    <h2 class="section-title text-center">Atención presencial y online<br>en toda la Región de Valparaíso</h2>
+    <p class="section-sub text-center" style="margin-bottom: 36px;">38 comunas cubiertas. Si su campo está en la región, podemos llegar.</p>
+
+    <div class="coverage-tags">
+      <span class="coverage-tag"><i class="fas fa-map-marker-alt"></i>Petorca</span>
+      <span class="coverage-tag"><i class="fas fa-map-marker-alt"></i>La Ligua</span>
+      <span class="coverage-tag"><i class="fas fa-map-marker-alt"></i>Cabildo</span>
+      <span class="coverage-tag"><i class="fas fa-map-marker-alt"></i>Papudo</span>
+      <span class="coverage-tag"><i class="fas fa-map-marker-alt"></i>Zapallar</span>
+      <span class="coverage-tag"><i class="fas fa-map-marker-alt"></i>Los Andes</span>
+      <span class="coverage-tag"><i class="fas fa-map-marker-alt"></i>Calle Larga</span>
+      <span class="coverage-tag"><i class="fas fa-map-marker-alt"></i>Rinconada</span>
+      <span class="coverage-tag"><i class="fas fa-map-marker-alt"></i>San Esteban</span>
+      <span class="coverage-tag"><i class="fas fa-map-marker-alt"></i>San Felipe</span>
+      <span class="coverage-tag"><i class="fas fa-map-marker-alt"></i>Catemu</span>
+      <span class="coverage-tag"><i class="fas fa-map-marker-alt"></i>Llay-Llay</span>
+      <span class="coverage-tag"><i class="fas fa-map-marker-alt"></i>Putaendo</span>
+      <span class="coverage-tag"><i class="fas fa-map-marker-alt"></i>Santa María</span>
+      <span class="coverage-tag"><i class="fas fa-map-marker-alt"></i>Quillota</span>
+      <span class="coverage-tag"><i class="fas fa-map-marker-alt"></i>La Calera</span>
+      <span class="coverage-tag"><i class="fas fa-map-marker-alt"></i>Hijuelas</span>
+      <span class="coverage-tag"><i class="fas fa-map-marker-alt"></i>La Cruz</span>
+      <span class="coverage-tag"><i class="fas fa-map-marker-alt"></i>Nogales</span>
+      <span class="coverage-tag"><i class="fas fa-map-marker-alt"></i>Limache</span>
+      <span class="coverage-tag"><i class="fas fa-map-marker-alt"></i>Olmué</span>
+      <span class="coverage-tag"><i class="fas fa-map-marker-alt"></i>Valparaíso</span>
+      <span class="coverage-tag"><i class="fas fa-map-marker-alt"></i>Viña del Mar</span>
+      <span class="coverage-tag"><i class="fas fa-map-marker-alt"></i>Concón</span>
+      <span class="coverage-tag"><i class="fas fa-map-marker-alt"></i>Quilpué</span>
+      <span class="coverage-tag"><i class="fas fa-map-marker-alt"></i>Villa Alemana</span>
+      <span class="coverage-tag"><i class="fas fa-map-marker-alt"></i>Casablanca</span>
+      <span class="coverage-tag"><i class="fas fa-map-marker-alt"></i>San Antonio</span>
+      <span class="coverage-tag"><i class="fas fa-map-marker-alt"></i>Algarrobo</span>
+      <span class="coverage-tag"><i class="fas fa-map-marker-alt"></i>Quintero</span>
+      <span class="coverage-tag"><i class="fas fa-map-marker-alt"></i>Puchuncaví</span>
+      <span class="coverage-tag"><i class="fas fa-map-marker-alt"></i>Isla de Pascua</span>
+    </div>
+  </div>
+</section>
+
+<!-- MAPA -->
+<section style="background: var(--white); padding: 60px 0;">
+  <div class="container">
+    <iframe
+      src="https://www.google.com/maps?q=Petorca,Chile&output=embed"
+      class="map-frame"
+      allowfullscreen=""
+      loading="lazy">
+    </iframe>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="contact-section" id="contacto">
+  <div class="container">
+    <div class="section-kicker text-center">Contacto directo</div>
+    <h2 class="section-title text-center">Hablemos sobre<br>su predio hoy</h2>
+    <p class="section-sub text-center">Sin formularios ni demoras. Contacto directo con el consultor.</p>
+
+    <div class="grid-3">
+      <div class="card contact-card reveal">
+        <div class="card-icon"><i class="fas fa-user-tie"></i></div>
+        <h3>Consultor Principal</h3>
+        <p style="font-weight:600; color:var(--soil); margin-bottom:4px;">José Ignacio Farías López</p>
+        <p>Ingeniero Agrícola</p>
+      </div>
+      <div class="card contact-card reveal reveal-delay-1">
+        <div class="card-icon"><i class="fas fa-phone"></i></div>
+        <h3>Teléfono</h3>
+        <p style="margin-bottom:18px;">+56 9 7150 5118</p>
+        <a href="tel:+56971505118" class="btn-price btn-price-outline" style="width:100%; text-align:center;">Llamar ahora</a>
+      </div>
+      <div class="card contact-card reveal reveal-delay-2">
+        <div class="card-icon"><i class="fas fa-envelope"></i></div>
+        <h3>Correo Electrónico</h3>
+        <p style="margin-bottom:18px; font-size:.85rem;">farias.l.jose95@gmail.com</p>
+        <a href="mailto:farias.l.jose95@gmail.com" class="btn-price btn-price-outline" style="width:100%; text-align:center;">Enviar correo</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL (AIDA: Acción) -->
+<section class="final-cta">
+  <div class="container">
+    <h2>Su campo tiene más potencial<br>del que imagina.</h2>
+    <p>Le ayudamos a optimizar el riego, mejorar la productividad y reducir costos con asesoría técnica concreta. La primera orientación es sin costo.</p>
+    <a href="https://wa.me/56971505118?text=Hola,%20necesito%20asesoría%20agrícola%20para%20mi%20predio" target="_blank" class="btn btn-wa-primary" style="font-size:1.05rem; padding:16px 34px;">
+      <i class="fab fa-whatsapp"></i> Escribir al consultor ahora
+    </a>
+    <p class="final-cta-meta">Sin compromiso · Respuesta en menos de 2 horas · Primera orientación gratuita</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>AgroIntegra Consultores</h3>
+        <p>Asesoría agrícola profesional para productores, empresas y organizaciones rurales en toda la Región de Valparaíso.</p>
+      </div>
+      <div>
+        <h4>Servicios</h4>
+        <a href="#servicios">Riego Tecnificado</a>
+        <a href="#servicios">Nutrición Vegetal</a>
+        <a href="#servicios">Manejo de Frutales</a>
+        <a href="#servicios">Fitosanidad</a>
+        <a href="#servicios">Proyectos Agrícolas</a>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <a href="tel:+56971505118">+56 9 7150 5118</a>
+        <a href="mailto:farias.l.jose95@gmail.com">farias.l.jose95@gmail.com</a>
+        <a href="https://wa.me/56971505118" target="_blank">WhatsApp</a>
+        <a href="#cobertura">Región de Valparaíso</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 AgroIntegra Consultores · Todos los derechos reservados · José Ignacio Farías López, Ingeniero Agrícola
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOTANTE -->
+<div class="wa-float" id="waFloat" style="display:none;">
+  <div class="wa-bubble" id="waBubble">
+    ¿Tiene dudas sobre su cultivo? Le ayudamos ahora 🌱
+  </div>
+  <a href="https://wa.me/56971505118?text=Hola,%20necesito%20información" target="_blank" class="wa-btn" style="position:relative;">
+    <i class="fab fa-whatsapp"></i>
+    <span class="wa-badge">1</span>
+  </a>
+</div>
+
+<script>
+// Reveal on scroll
+const revealEls = document.querySelectorAll('.reveal');
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting) e.target.classList.add('visible');
+  });
+}, { threshold: 0.12 });
+revealEls.forEach(el => revealObs.observe(el));
+
+// Show WA float after 3s
+setTimeout(() => {
+  document.getElementById('waFloat').style.display = 'flex';
+}, 3000);
+
+// Hide bubble after 8s
+setTimeout(() => {
+  const b = document.getElementById('waBubble');
+  if(b) b.style.display = 'none';
+}, 8000);
+
+// FAQ click: close others
+document.querySelectorAll('.faq-item').forEach(item => {
+  item.addEventListener('toggle', () => {
+    if(item.open) {
+      document.querySelectorAll('.faq-item[open]').forEach(other => {
+        if(other !== item) other.removeAttribute('open');
+      });
+    }
+  });
+});
+</script>
+
+</body>
+</html>
