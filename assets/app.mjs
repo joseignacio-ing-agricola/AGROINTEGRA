@@ -1,5 +1,5 @@
 import {SITE} from '../config.mjs';
-import {COMMUNES, attribution, recommend, pesos, summary, validateInput, whatsappUrl, campaignUrl} from './logic.mjs';
+import {COMMUNES, attribution, recommend, priceLabel, summary, validateInput, whatsappUrl, campaignUrl} from './logic.mjs';
 
 const $ = selector => document.querySelector(selector);
 const emit = (name, detail = {}) => window.dispatchEvent(new CustomEvent('agrointegra:conversion', {detail:{event:name,...detail}}));
@@ -60,11 +60,13 @@ if (form && result) {
   const status = $('#action-status');
   const prefill = new URLSearchParams(location.search).get('comuna');
   if (COMMUNES.includes(prefill)) form.elements.commune.value = prefill;
-  document.querySelectorAll('[data-plan]').forEach(link => link.addEventListener('click', () => {form.hidden=false;result.hidden=true;form.elements.goal.value=link.dataset.plan;}));
+  document.querySelectorAll('[data-plan]').forEach(link => link.addEventListener('click', () => {form.hidden=false;result.hidden=true;form.elements.goal.value=link.dataset.plan;$('#optional-details').open=true;}));
   document.querySelectorAll('[data-topic]').forEach(link => link.addEventListener('click', () => {form.hidden=false;result.hidden=true;if(!form.elements.concern.value.trim())form.elements.concern.value=link.dataset.topic;}));
   form.addEventListener('submit', event => {
     event.preventDefault();
-    const checked = validateInput(Object.fromEntries(new FormData(form)));
+    const raw = Object.fromEntries(new FormData(form));
+    if(form.elements.area.validity.badInput)raw.area='dato no numérico';
+    const checked = validateInput(raw);
     const errorBox = $('#form-errors');
     form.querySelectorAll('[aria-invalid]').forEach(el => {el.removeAttribute('aria-invalid');el.removeAttribute('aria-describedby');});
     form.querySelectorAll('.field-error').forEach(el => {el.textContent='';});
@@ -74,20 +76,21 @@ if (form && result) {
       for (const [key,message] of Object.entries(checked.errors)) {
         const field=form.elements[key];field.setAttribute('aria-invalid','true');field.setAttribute('aria-describedby',key+'-error');$('#'+key+'-error').textContent=message;
       }
+      if(checked.errors.area||checked.errors.goal||checked.errors.urgency)$('#optional-details').open=true;
       errorBox.focus();return;
     }
     errorBox.hidden=true;
     const plan=recommend(checked.data);
     currentMessage=summary(checked.data,plan,origin);
     $('#result-title').textContent=plan.name;
-    $('#result-price').textContent=pesos(plan.price)+' / '+plan.unit;
+    $('#result-price').textContent=priceLabel(plan);
     $('#result-note').textContent=plan.note;
     $('#message-preview').value=currentMessage;
     $('#send-whatsapp').href=whatsappUrl(currentMessage);
     form.hidden=true;result.hidden=false;status.textContent='';result.focus();
-    emit('consulta_preparada',{modality:plan.goal,tier:plan.afc?'menor_5ha':'general',source:origin.source});
+    emit('consulta_preparada',{modality:plan.goal||'por_definir',tier:plan.afc===null?'por_confirmar':plan.afc?'menor_5ha':'general',source:origin.source});
   });
-  $('#edit-form').addEventListener('click',()=>{form.hidden=false;result.hidden=true;status.textContent='';form.elements.name.focus();});
+  $('#edit-form').addEventListener('click',()=>{form.hidden=false;result.hidden=true;status.textContent='';form.elements.commune.focus();});
   $('#send-whatsapp').addEventListener('click',()=>{status.textContent='Si WhatsApp se abrió, revisa el mensaje y pulsa Enviar allí. Abrir el enlace no confirma una reserva.';emit('whatsapp_open',{placement:'asistente'});});
   $('#copy-message').addEventListener('click',async()=>{
     try{await navigator.clipboard.writeText(currentMessage);status.textContent='Mensaje copiado. Puedes pegarlo en WhatsApp.';}
