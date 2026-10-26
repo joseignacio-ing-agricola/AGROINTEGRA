@@ -34,3 +34,7 @@ Para previsualizar sirve esta carpeta con cualquier servidor HTTP estático. Los
 Los eventos agrointegra:conversion son eventos del navegador sin datos del formulario; no se envían ni acumulan en un servicio de analítica. No confundir un clic con una conversión real. Cuenta consultas recibidas, reuniones acordadas y clientes contratados.
 
 No hay claves, píxeles publicitarios, formularios de terceros ni servicios de pago configurados. La ilustración, el icono y la imagen social fueron creados para este sitio; los testimonios anteriores permanecen únicamente en el historial Git.
+
+## Instagram
+Las tres imágenes proceden de @agrointegra.consultores, incorporadas por solicitud del titular. Las publicaciones originales se enlazan en la galería. Su procedencia y las etiquetas observadas se conservan en assets/instagram/sources.json. No se presentan como casos de éxito o retratos del consultor.
+El formulario solo exige comuna, cultivo y motivo. Nombre, superficie, modalidad y plazo son opcionales. Si faltan datos de precio, se muestra un rango o se deja el valor por confirmar.

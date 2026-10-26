@@ -1,0 +1,28 @@
+{
+  "account": "https://www.instagram.com/agrointegra.consultores/",
+  "retrieved": "2026-10-26",
+  "authorization": "El titular solicitó incorporar imágenes de esta cuenta en la web de AgroIntegra.",
+  "items": [
+    {
+      "file": "huerto-invierno.jpg",
+      "url": "https://www.instagram.com/agrointegra.consultores/p/DbLuqFVltpK/",
+      "title": "Huerto de invierno",
+      "instagramAILabelObserved": true,
+      "note": "Imagen sin retoque. Alojada localmente para evitar enlaces CDN temporales. No se presenta como testimonio ni como resultado de un servicio."
+    },
+    {
+      "file": "matriz-electrofusion.jpg",
+      "url": "https://www.instagram.com/agrointegra.consultores/p/DayLFHbmN4P/",
+      "title": "Instalación de matriz",
+      "instagramAILabelObserved": true,
+      "note": "Imagen sin retoque. Alojada localmente para evitar enlaces CDN temporales. No se presenta como testimonio ni como resultado de un servicio."
+    },
+    {
+      "file": "observacion-insectos.jpg",
+      "url": "https://www.instagram.com/agrointegra.consultores/p/DaA6ev0DbWC/",
+      "title": "Observación de insectos",
+      "instagramAILabelObserved": false,
+      "note": "Imagen sin retoque. Alojada localmente para evitar enlaces CDN temporales. No se presenta como testimonio ni como resultado de un servicio."
+    }
+  ]
+}
